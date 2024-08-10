@@ -1,0 +1,286 @@
+/*Header*/
+.header {
+  padding-top: 20px;
+}
+.nav-item a {
+  font-size: 1.2rem;
+  color: black;
+  position: relative;
+}
+.nav-link::after {
+  content: ""; /* Пустой контент для создания линии */
+  position: absolute;
+  width: 100%; /* Ширина подчеркивания равна ширине ссылки */
+  height: 3px; /* Толщина линии */
+  bottom: -15px; /* Позиционирование линии на 20px ниже текста */
+  left: 0;
+  background-color: black; /* Цвет подчеркивания */
+  visibility: hidden; /* Изначально линия невидима */
+  transform: scaleX(0); /* Линия сжата по горизонтали до невидимости */
+  transition: all 0.5s ease-in-out; /* Плавный переход */
+}
+.nav-item a:hover::after {
+  color: grey;
+  visibility: visible; /* Линия становится видимой */
+  transform: scaleX(1); /* Линия растягивается до полной ширины */
+}
+
+.button-container {
+  position: relative;
+  display: inline-block;
+}
+.btn-1 {
+  background-color: black;
+  color: rgb(255, 255, 255);
+  width: 192px;
+  height: 54px;
+  border: 0;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 0;
+  top: 0;
+  left: 0;
+  transition: transform 1s ease, opacity 1s ease;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+}
+.btn-second-1 {
+  background-color: red;
+  color: black;
+  width: 192px;
+  height: 54px;
+  padding: 0;
+  border: 0;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: scale(1);
+  z-index: 0;
+}
+.button-container:hover .btn-1 {
+  transform: translateX(-30%);
+  opacity: 0;
+}
+
+.button-container:hover .btn-second-1 {
+  opacity: 1;
+  z-index: 2;
+}
+/*-----------img animation-----------*/
+.slide-svg {
+  margin-top: 50px;
+  height: 700px;
+  position: relative; /* Необходима для абсолютного позиционирования внутри контейнера */
+  width: 100%;
+  background-color: white;
+  overflow: hidden; /* Чтобы изображение не выходило за границы */
+}
+
+.one {
+  width: 47px;
+  height: 43px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 50px;
+  animation: moveImage 4s infinite;
+}
+.two {
+  width: 30px;
+  height: 22px;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 450px;
+  animation: moveImage 4s infinite;
+}
+.three {
+  width: 223px;
+  height: 214px;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 500px;
+  animation: moveImage 5s infinite;
+}
+.four {
+  width: 278px;
+  height: 278px;
+  position: absolute;
+  margin-top: 300px;
+  margin-left: 550px;
+  animation: moveImage 5s infinite;
+}
+.five {
+  width: 222px;
+  height: 229px;
+  position: absolute;
+  margin-top: 20px;
+  margin-left: 85%;
+  animation: moveImage 5s infinite;
+}
+@keyframes moveImage {
+  0% {
+    transform: translate(0, 0); /* Начальная точка */
+  }
+  50% {
+    transform: translate(0px, 100px); /* Движение вниз */
+  }
+  100% {
+    transform: translate(0, 0); /* Возвращение в начальную точку */
+  }
+}
+
+/*--------Slide-show-------*/
+.slideshow-container {
+  max-width: 530px;
+  height: 600px;
+  position: absolute;
+  top: 200px;
+  border-radius: 10%;
+  overflow: hidden; /* Скрываем изображения, которые выходят за границы контейнера */
+}
+
+.slides {
+  display: none; /* Скрываем все изображения по умолчанию */
+  width: 530px;
+  height: 600px;
+}
+
+.slideshow-container img {
+  width: 100%; /* Изображения занимают всю ширину контейнера */
+  height: 100%;
+  vertical-align: middle;
+}
+
+.dot {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.active {
+  background-color: #717171;
+}
+.title {
+  position: absolute;
+  top: 150px;
+  height: 500px;
+  width: 600px;
+  margin-right: 130px;
+  text-align: left;
+}
+
+.title h1 {
+  font-size: 5rem;
+  padding-top: 80px;
+  display: inline-block;
+}
+.title p {
+  padding-top: 50px;
+  font-size: 2rem;
+}
+.button-container-2 {
+  position: relative;
+  display: inline-block;
+  padding-top: 80px;
+}
+.btn-2 {
+  background-color: black;
+  color: rgb(255, 255, 255);
+  width: 192px;
+  height: 54px;
+  border: 0;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  top: 0;
+  left: 0;
+  transition: transform 1s ease, opacity 1s ease;
+  cursor: pointer;
+  position: absolute;
+  z-index: 1;
+}
+.btn-second-2 {
+  position: absolute;
+  top: 480px;
+  background-color: red;
+  color: black;
+  width: 192px;
+  height: 54px;
+  border: 0;
+  top: 0;
+  left: 0;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  opacity: 0;
+  transform: scale(1);
+  z-index: 0;
+}
+.button-container-2:hover .btn-2 {
+  transform: translateX(-30%);
+  opacity: 0;
+}
+
+.button-container-2:hover .btn-second-2 {
+  opacity: 1;
+  z-index: 2;
+}
+.bi-lightbulb {
+  color: yellow;
+}
+.rotate {
+  display: inline-block;
+  height: 96px;
+  transform-origin: bottom;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.rotate:hover {
+  transform: rotateX(90deg);
+}
+/*-----------------------marquee-container-----------------------*/
+.marquee-container {
+  width: 100%;
+  overflow: hidden; /* Скрываем изображения, выходящие за пределы контейнера */
+  background-color: black; /* Фон контейнера */
+  padding: 10px 0; /* Внутренний отступ */
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+/* Внутренний контейнер, содержащий все изображения */
+.marquee-content {
+  display: flex;
+  animation: marquee 8s linear infinite; /* Анимация перемещения контента */
+}
+
+/* Настройка изображений */
+.marquee-content img {
+  width: 150px; /* Ширина каждого изображения */
+  height: auto; /* Автоматическая высота, сохраняющая пропорции */
+  margin-right: 250px; /* Отступ между изображениями */
+  vertical-align: middle;
+}
+
+/* Ключевые кадры для анимации */
+@keyframes marquee {
+  0% {
+    transform: translateX(0); /* Начальное положение */
+  }
+  100% {
+    transform: translateX(-100%); /* Конечное положение */
+  }
+}
