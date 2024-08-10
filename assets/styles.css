@@ -252,6 +252,10 @@
   transform: rotateX(90deg);
 }
 /*-----------------------marquee-container-----------------------*/
+.perfect {
+  width: 100%;
+  background-color: black;
+}
 .marquee-container {
   width: 100%;
   overflow: hidden; /* Скрываем изображения, выходящие за пределы контейнера */
@@ -263,6 +267,7 @@
 
 /* Внутренний контейнер, содержащий все изображения */
 .marquee-content {
+  width: 1400px;
   display: flex;
   animation: marquee 8s linear infinite; /* Анимация перемещения контента */
 }
